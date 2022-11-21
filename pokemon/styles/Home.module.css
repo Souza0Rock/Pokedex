@@ -10,12 +10,16 @@
 }
 
 .formsContainer {
-    margin: 16rem;
+    margin-right: 16rem;
 }
 
 .formRequest, .button {
     height: 3rem;
     padding: 0 0.5rem;
+}
+
+.formRequest:nth-child(2) {
+    cursor: pointer;
 }
 
 .button {
@@ -24,4 +28,5 @@
     font-size: 20px;
     background-color: #F9C903;
     border-radius: 7px;
+    cursor: pointer;
 }
