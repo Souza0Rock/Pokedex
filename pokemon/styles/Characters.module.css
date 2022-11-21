@@ -1,0 +1,13 @@
+.containerBody {
+    min-height: 100vh;
+    background-color: #141414;
+}
+
+.header_title {
+    text-align: center;
+    padding: 15px 0;
+    color: #F9C903;
+}
+.iconBack {
+    cursor: pointer;
+}

@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-image: url('../public/cabeca_pok.jpg');
+    background-image: url('../public/images/cabeca_pok.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

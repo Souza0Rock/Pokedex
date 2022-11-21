@@ -1,5 +1,5 @@
+import Router from 'next/router'
 import styles from '../styles/Home.module.css'
-import { Router } from 'next/router'
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
           <button type='submit' className={styles.formRequest}>Abrir</button>
         </div>
         <div>
-          <button type='button' className={styles.button} onClick={() => {Router.push('/Characters')}}>All Pokemons</button>
+          <button type='button' className={styles.button} onClick={() => {Router.push('/Characters?name=all')}}>All Pokemons</button>
         </div>
       </form>
     </div>
