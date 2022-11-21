@@ -8,6 +8,28 @@
     padding: 15px 0;
     color: #F9C903;
 }
+
 .iconBack {
     cursor: pointer;
+}
+
+.ulCharacters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 10px;
+}
+
+.li {
+    width: 11%;
+    padding: 15px 0;
+    border: 2px solid #8b7109;
+    border-radius: 3px;
+}
+
+.li_name {
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #F9C903;
 }
