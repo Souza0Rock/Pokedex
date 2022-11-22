@@ -5,7 +5,7 @@ export default function Header () {
     return (
         <header>
             <div className={styles.container}>
-                <img alt='voltar' src='../images/icon-voltar.png' width={'70px'} className={styles.iconBack} onClick={() => Router.push('../')} />                    
+                <img alt='voltar' src='../images/icon-voltar.png' className={styles.iconBack} onClick={() => Router.push('../')} />                    
                 <h1 className={styles.header_title}>Lista de Pokemons</h1>
             </div>
         </header>        

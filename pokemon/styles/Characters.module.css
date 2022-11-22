@@ -17,10 +17,11 @@ header .container {
 
 .iconBack {
     cursor: pointer;
+    width: 70px;
 }
 
 .ulCharacters {
-    padding: 10px 0 30px;
+    padding: 10px 30px 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -28,8 +29,8 @@ header .container {
 }
 
 .li {
-    width: 11%;
-    padding: 15px 0;
+    min-width: 11%;
+    padding: 15px 10px;
     border: 2px solid #8b7109;
     border-radius: 3px;
     cursor: pointer;

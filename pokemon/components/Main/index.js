@@ -23,8 +23,7 @@ export default function Main () {
     const [itemSelect, setItemSelect] = useState(null);
 
     const onItemClicked = (item) => {
-
-        const base2URL = `https://pokeapi.co/api/v2/pokemon/1/`
+        const base2URL = `https://pokeapi.co/api/v2/pokemon/9/`
 
         setItemSelect(item);
         setModalVisible(true);
@@ -33,8 +32,6 @@ export default function Main () {
         .then((response) => 
         setPokemonInfo(response.data))
     }
-
-    console.log(pokemonInfo, 'deu certo')
 
     function closeModal() {
         setModalVisible(false);
@@ -45,7 +42,7 @@ export default function Main () {
             <ul className={styles.ulCharacters}>
                 {character?.map((character, index) => {
                     return (
-                        <li key={index} className={styles.li} onClick={() => {onItemClicked(character)}}>
+                        <li className={styles.li} key={index} onClick={() => {onItemClicked(character)}}>
                             <h3 className={styles.li_name}>{character?.name}</h3>
                         </li>
                     );
@@ -57,38 +54,42 @@ export default function Main () {
                 onRequestClose={closeModal}
                 overlayClassName={modalStyle.modalOverlay}
                 className={modalStyle.modalContent}>
-                    <div>
-                        <h1>{itemSelect?.name}</h1>
-                    </div>
-                    <ul>
-                        {character?.map((character, index) => {
-                            return (
-                                <>
-                                    <li>
-                                        <p>hp = </p>
-                                    </li>
-                                    <li>
-                                        <p>attack = </p>
-                                    </li>
-                                    <li>                   
-                                        <p>defense = </p>
-                                    </li>
-                                    <li>                   
-                                        <p>special-attack = </p>
-                                    </li>
-                                    <li>                   
-                                        <p>special-defense = </p>
-                                    </li>
-                                    <li>                   
-                                        <p>speed = </p>
-                                    </li>
-                                    <li>                   
-                                        <p>type = </p>
-                                    </li>
-                                </>
-                            )
-                        })}
-                    </ul>
+                    <section className={modalStyle.section}>
+                        <div className={modalStyle.contentTxt}>
+                            <div>
+                                <h1 className={modalStyle.title}>{itemSelect?.name}</h1>
+                            </div>
+                            <ul>                    
+                                <li className={modalStyle.li_info}>
+                                    <p className={modalStyle.li_txt}>hp = {pokemonInfo && pokemonInfo?.stats[0]?.base_stat}</p>
+                                </li>
+                                <li className={modalStyle.li_info}>
+                                    <p className={modalStyle.li_txt}>attack = {pokemonInfo && pokemonInfo?.stats[1]?.base_stat}</p>
+                                </li>
+                                <li className={modalStyle.li_info}>                   
+                                    <p className={modalStyle.li_txt}>defense = {pokemonInfo && pokemonInfo?.stats[2]?.base_stat}</p>
+                                </li>
+                                <li className={modalStyle.li_info}>                   
+                                    <p className={modalStyle.li_txt}>special-attack = {pokemonInfo && pokemonInfo?.stats[3]?.base_stat}</p>
+                                </li>
+                                <li className={modalStyle.li_info}>                   
+                                    <p className={modalStyle.li_txt}>special-defense = {pokemonInfo && pokemonInfo?.stats[4]?.base_stat}</p>
+                                </li>
+                                <li className={modalStyle.li_info}>                   
+                                    <p className={modalStyle.li_txt}>speed = {pokemonInfo && pokemonInfo?.stats[5]?.base_stat}</p>
+                                </li>
+                                <li className={modalStyle.li_info}>                   
+                                    <p className={modalStyle.li_txt}>type = {pokemonInfo && pokemonInfo?.types[0]?.type?.name}</p>
+                                </li>                       
+                            </ul>
+                        </div>
+                        <div className={modalStyle.divModalImg}>
+                            <img src={pokemonInfo && pokemonInfo?.sprites?.front_default} alt={itemSelect?.name} className={modalStyle.modalImg}/>
+                        </div>
+                        <div className={modalStyle.divXClose} onClick={() => setModalVisible(false)}>
+                            <p className={modalStyle.xClose}>x</p>
+                        </div>
+                    </section>
                 </Modal>
             </div>
         </main>
