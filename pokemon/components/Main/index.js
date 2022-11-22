@@ -11,6 +11,8 @@ export default function Main () {
     const baseURL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
     const [character, setCharacter] = useState()
 
+    const [pokemonInfo, setPokemonInfo] = useState()
+
     useEffect (() => {
         axios.get(baseURL)
         .then((response) => 
@@ -21,9 +23,18 @@ export default function Main () {
     const [itemSelect, setItemSelect] = useState(null);
 
     const onItemClicked = (item) => {
+
+        const base2URL = `https://pokeapi.co/api/v2/pokemon/1/`
+
         setItemSelect(item);
         setModalVisible(true);
+
+        axios.get(base2URL)
+        .then((response) => 
+        setPokemonInfo(response.data))
     }
+
+    console.log(pokemonInfo, 'deu certo')
 
     function closeModal() {
         setModalVisible(false);
@@ -34,7 +45,7 @@ export default function Main () {
             <ul className={styles.ulCharacters}>
                 {character?.map((character, index) => {
                     return (
-                        <li key={index} className={styles.li} onClick={() => onItemClicked(character)}>
+                        <li key={index} className={styles.li} onClick={() => {onItemClicked(character)}}>
                             <h3 className={styles.li_name}>{character?.name}</h3>
                         </li>
                     );
@@ -52,7 +63,29 @@ export default function Main () {
                     <ul>
                         {character?.map((character, index) => {
                             return (
-                                
+                                <>
+                                    <li>
+                                        <p>hp = </p>
+                                    </li>
+                                    <li>
+                                        <p>attack = </p>
+                                    </li>
+                                    <li>                   
+                                        <p>defense = </p>
+                                    </li>
+                                    <li>                   
+                                        <p>special-attack = </p>
+                                    </li>
+                                    <li>                   
+                                        <p>special-defense = </p>
+                                    </li>
+                                    <li>                   
+                                        <p>speed = </p>
+                                    </li>
+                                    <li>                   
+                                        <p>type = </p>
+                                    </li>
+                                </>
                             )
                         })}
                     </ul>
