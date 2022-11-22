@@ -3,14 +3,16 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    background-color: #000;
     background-image: url('../public/images/cabeca_pok.jpg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position-y: center;
+    background-position-x: -10rem;
     background-size: cover;
 }
 
 .formsContainer {
-    margin-right: 16rem;
+    margin-right: 18%;
 }
 
 .formRequest, .button {
@@ -23,8 +25,8 @@
 }
 
 .button {
-    width: 83%;
-    margin: 20px;
+    /* width: 83%; */
+    margin: 16px 8px;
     font-size: 20px;
     background-color: #F9C903;
     border-radius: 7px;

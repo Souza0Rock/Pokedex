@@ -3,9 +3,15 @@
     background-color: #141414;
 }
 
+header .container {
+    display: flex;
+    padding: 30px 0 40px;
+}
+
 .header_title {
+    margin-left: 32%;
+    align-self: center;
     text-align: center;
-    padding: 15px 0;
     color: #F9C903;
 }
 
@@ -14,6 +20,7 @@
 }
 
 .ulCharacters {
+    padding: 10px 0 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -25,6 +32,7 @@
     padding: 15px 0;
     border: 2px solid #8b7109;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .li_name {

@@ -6,11 +6,11 @@ export default function Home() {
     <div className={styles.container}>
       <form className={styles.formsContainer}>
         <div>
-          <input type={"text"} name={"name"} placeholder={"POKEMON"} className={styles.formRequest} />
+          <input type={"text"} name={"name"} placeholder={"Encontre seu pokemon"} className={styles.formRequest} />
           <button type='submit' className={styles.formRequest}>Abrir</button>
         </div>
         <div>
-          <button type='button' className={styles.button} onClick={() => {Router.push('/Characters?name=all')}}>All Pokemons</button>
+          <button type='button' className={styles.button} onClick={() => {Router.push('/Characters')}}>Todos os Pokemons</button>
         </div>
       </form>
     </div>
