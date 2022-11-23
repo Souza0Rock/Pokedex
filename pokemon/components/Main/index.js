@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import styles from '../../styles/Characters.module.css'
 import modalStyle from '../../styles/ModalStyles.module.css'
+import { search } from "../Header";
 
 Modal.setAppElement("#__next");
 
@@ -22,16 +23,18 @@ export default function Main () {
     const [modalVisible, setModalVisible] = useState(false);
     const [itemSelect, setItemSelect] = useState(null);
 
-    const onItemClicked = (item) => {
-        const base2URL = `https://pokeapi.co/api/v2/pokemon/9/`
+    const onItemClicked = (info) => {
+        const infoBaseURL = `https://pokeapi.co/api/v2/pokemon/${info?.name}`
 
-        setItemSelect(item);
+        setItemSelect(info);
         setModalVisible(true);
 
-        axios.get(base2URL)
+        axios.get(infoBaseURL)
         .then((response) => 
         setPokemonInfo(response.data))
     }
+
+    console.log(pokemonInfo, 'exermjklcnjwso')
 
     function closeModal() {
         setModalVisible(false);
@@ -40,7 +43,13 @@ export default function Main () {
     return (
         <main>
             <ul className={styles.ulCharacters}>
-                {character?.map((character, index) => {
+                {character?.filter((val) => {
+                    if (search == "") {
+                        return val
+                    } else if (val.character?.name.toLowerCase().includes(search.toLowerCase())) {
+                        return val
+                    }
+                }).map((character, index) => {
                     return (
                         <li className={styles.li} key={index} onClick={() => {onItemClicked(character)}}>
                             <h3 className={styles.li_name}>{character?.name}</h3>

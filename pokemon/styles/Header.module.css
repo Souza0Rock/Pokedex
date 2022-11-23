@@ -1,0 +1,21 @@
+header .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 35px 40px;
+}
+
+.iconBack {
+    cursor: pointer;
+    width: 70px;
+}
+
+.header_title {
+    align-self: center;
+    text-align: center;
+    color: #F9C903;
+}
+
+.formRequest, .button {
+    height: 3rem;
+    padding: 0 0.5rem;
+}
