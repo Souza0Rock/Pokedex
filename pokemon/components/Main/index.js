@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import styles from '../../styles/Characters.module.css'
 import modalStyle from '../../styles/ModalStyles.module.css'
-import { search } from "../Header";
 
 Modal.setAppElement("#__next");
 
@@ -20,6 +19,8 @@ export default function Main () {
         setCharacter(response.data.results))
     }, [])
 
+    console.log(pokemonInfo, 'sla')
+
     const [modalVisible, setModalVisible] = useState(false);
     const [itemSelect, setItemSelect] = useState(null);
 
@@ -34,22 +35,15 @@ export default function Main () {
         setPokemonInfo(response.data))
     }
 
-    console.log(pokemonInfo, 'exermjklcnjwso')
-
     function closeModal() {
         setModalVisible(false);
     }
 
+
     return (
         <main>
             <ul className={styles.ulCharacters}>
-                {character?.filter((val) => {
-                    if (search == "") {
-                        return val
-                    } else if (val.character?.name.toLowerCase().includes(search.toLowerCase())) {
-                        return val
-                    }
-                }).map((character, index) => {
+                {character?.map((character, index) => {
                     return (
                         <li className={styles.li} key={index} onClick={() => {onItemClicked(character)}}>
                             <h3 className={styles.li_name}>{character?.name}</h3>

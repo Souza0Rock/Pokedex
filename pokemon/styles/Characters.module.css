@@ -25,3 +25,27 @@
     letter-spacing: 2px;
     color: #F9C903;
 }
+
+@media (max-width: 1419px) {
+    .li {
+        width: 20%;
+    }
+}
+
+@media (max-width: 810px) {
+    .li {
+        width: 30%;
+    }
+}
+
+@media (max-width: 562px) {
+    .li {
+        width: 45%;
+    }
+}
+
+@media (max-width: 395px) {
+    .li {
+        width: 100%;
+    }
+}
