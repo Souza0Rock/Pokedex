@@ -1,10 +1,7 @@
-.header {
-    padding: 0 5.6%;
-}
-
 .header .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 3% 0 4%;
 }
 
@@ -14,25 +11,86 @@
 }
 
 .header_title {
-    align-self: center;
-    text-align: center;
     color: #F9C903;
 }
 
-.formRequest, .button {
+.formRequest {
     height: 100%;
     padding: 0 0.5rem;
     text-align: center;
 }
 
-@media (max-width: 600px) {
-    header .container {
-        height: 175px;
+@media (min-width: 1441px) {
+    .header {
+        padding: 0 15%;
+    }
+
+    .iconBack {
+        width: 6%;
+    }
+
+    .header_title {
+        font-size: 50px;
+    }
+
+    .formsContainer {
+        height: 60px;
+        width: 20%;
+    }
+
+    .formRequest {
+        width: 100%;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .header {
+        padding: 0 5.6%;
+    }
+    
+    .formsContainer {
+        height: 30px;
+    }
+    
+    .formRequest {
+        height: 35px;
+    }
+}
+
+@media (max-width: 1419px) {
+    .header .container {
+        padding: 3% 6% 4%;
+    }
+}
+
+@media (max-width: 810px) {
+    .header .container {
+        padding: 3% 2% 4%;
         flex-direction: column;
-        align-items: center;
+        gap: 1rem 0;
     }
 
     .iconBack {
         display: none;
+    }
+
+    .header_title {
+        padding-top: 5%;
+    }
+
+    .formsContainer {
+        height: 45px;
+        width: 40%;
+    }
+
+    .formRequest {
+        width: 100%;
+    }
+}
+
+@media (max-width: 460px) {
+    .formRequest {
+        font-size: 9px;
     }
 }

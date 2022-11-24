@@ -58,10 +58,10 @@ export default function Main () {
                 overlayClassName={modalStyle.modalOverlay}
                 className={modalStyle.modalContent}>
                     <section className={modalStyle.section}>
+                        <div>
+                            <h1 className={modalStyle.title}>{itemSelect?.name}</h1>
+                        </div>
                         <div className={modalStyle.contentTxt}>
-                            <div>
-                                <h1 className={modalStyle.title}>{itemSelect?.name}</h1>
-                            </div>
                             <ul>                    
                                 <li className={modalStyle.li_info}>
                                     <p className={modalStyle.li_txt}>hp = {pokemonInfo && pokemonInfo?.stats[0]?.base_stat}</p>

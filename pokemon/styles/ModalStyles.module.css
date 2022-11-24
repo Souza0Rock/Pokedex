@@ -18,25 +18,26 @@
 }
 
 .modalContent {
-    width: 34%;
+    width: 39rem;
+    max-height: 416px;
     padding: 20px;
     outline: none;
     overflow: auto;
-    display: flex;
-    justify-content: flex-end;
+    /* display: flex;
+    justify-content: flex-end; */
     border-radius: 4px;
     background: #9E8007;
 }
 
 .section {
     display: flex;
+    flex-flow: column wrap;
 }
 
 .contentTxt {
     display: flex;
     flex-direction: column;
     width: 55%;
-    margin-right: 2rem;
 }
 
 .title {
@@ -56,7 +57,7 @@
     display: flex;
     width: 66.8%;
     align-content: center;
-    justify-content: center;
+    justify-content: left;
 }
 
 .modalImg {
@@ -79,4 +80,10 @@
 .xClose:hover {
     cursor: pointer;
     color: #9C231C;
+}
+
+@media (max-width: 810px) {
+    .modalContent {
+        width: 80%;
+    }
 }
