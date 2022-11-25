@@ -19,6 +19,12 @@
     cursor: pointer;
 }
 
+.li:hover {
+    box-shadow: 0px 10px 27px -8px #f2f5f7, 
+    0px -10px 27px -8px #a31925;
+    transition: 0.3s;
+}
+
 .li_name {
     text-transform: capitalize;
     text-align: center;

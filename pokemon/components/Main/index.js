@@ -19,8 +19,6 @@ export default function Main () {
         setCharacter(response.data.results))
     }, [])
 
-    console.log(pokemonInfo, 'sla')
-
     const [modalVisible, setModalVisible] = useState(false);
     const [itemSelect, setItemSelect] = useState(null);
 
@@ -58,7 +56,7 @@ export default function Main () {
                 overlayClassName={modalStyle.modalOverlay}
                 className={modalStyle.modalContent}>
                     <section className={modalStyle.section}>
-                        <div>
+                        <div className={modalStyle.nameDiv}>
                             <h1 className={modalStyle.title}>{itemSelect?.name}</h1>
                         </div>
                         <div className={modalStyle.contentTxt}>

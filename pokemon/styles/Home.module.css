@@ -1,7 +1,6 @@
 .container {
     min-height: 100vh;
     display: flex;
-    display: flex;
     align-items: center;
     justify-content: flex-end;
     background-color: #000;
@@ -31,4 +30,18 @@
     background-color: #F9C903;
     border-radius: 7px;
     cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        background-image: url('../public/images/pokemon-bg.png');
+        background-position-x: 46%;
+        background-position-y: 15%;
+        background-size: 60%;
+        justify-content: center;
+    }
+    
+    .formsContainer {
+        margin: 0;
+    }
 }
