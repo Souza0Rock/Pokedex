@@ -20,8 +20,8 @@
 }
 
 .li:hover {
-    box-shadow: 0px 10px 27px -8px #f2f5f7, 
-    0px -10px 27px -8px #a31925;
+    box-shadow: 0px 10px 27px -9px #f2f5f7, 
+    0px -10px 27px -2px #a31925;
     transition: 0.3s;
 }
 
