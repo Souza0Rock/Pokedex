@@ -11,6 +11,12 @@ export default function SectionHome() {
     const [pokemon, setPokemon] = useState("");
     const [openModal, setOpenModal] = useState(false);
 
+    const falha = (pokemon) => {
+        if (pokemon === '') {
+            alert("Digite o nome de um pokemon!")
+        }
+    }
+
     const pokemoLendas = () => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
         .then((response) => {
@@ -31,7 +37,10 @@ export default function SectionHome() {
             <div className={styles.container}>
                 <div>
                     <input type={"text"} placeholder={"Encontre seu pokemon!"} className={styles.formRequest} onChange={(e) => setPokemon(e.target.value)} />
-                    <button type='submit' className={styles.formRequest} onClick={() => pokemoLendas()}>Abrir</button>
+                    <button type='submit' className={styles.formRequest} 
+                    onClick={() => {
+                        pokemoLendas();
+                        falha()}}>Abrir</button>
                 </div>
                 <div>
                     <button type='button' className={styles.button} onClick={() => { Router.push('/Characters') }}>Todos os Pokemons</button>
