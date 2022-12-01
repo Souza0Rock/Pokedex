@@ -11,7 +11,7 @@ export default function SectionHome() {
     const [pokemon, setPokemon] = useState("");
     const [openModal, setOpenModal] = useState(false);
 
-    const falha = (pokemon) => {
+    const failed = (pokemon) => {
         if (pokemon === '') {
             alert("Digite o nome de um pokemon!")
         }
@@ -36,11 +36,18 @@ export default function SectionHome() {
         <section>
             <div className={styles.container}>
                 <div>
-                    <input type={"text"} placeholder={"Encontre seu pokemon!"} className={styles.formRequest} onChange={(e) => setPokemon(e.target.value)} />
+                    <input 
+                        type={"text"} 
+                        placeholder={"Encontre seu pokemon!"} 
+                        className={styles.formRequest} 
+                        onChange={(e) => 
+                            setPokemon(e.target.value)
+                        } 
+                    />
                     <button type='submit' className={styles.formRequest} 
                     onClick={() => {
                         pokemoLendas();
-                        falha()}}>Abrir</button>
+                        failed()}}>Abrir</button>
                 </div>
                 <div>
                     <button type='button' className={styles.button} onClick={() => { Router.push('/Characters') }}>Todos os Pokemons</button>

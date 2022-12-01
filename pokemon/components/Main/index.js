@@ -1,23 +1,23 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Modal from "react-modal";
 import styles from '../../styles/Characters.module.css'
 import modalStyle from '../../styles/ModalStyles.module.css'
 
 Modal.setAppElement("#__next");
 
-export default function Main () {
+export default function Main ({pokemonFilter}) {
 
-    const baseURL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
-    const [character, setCharacter] = useState()
+    const [character, setCharacter] = useState();
+    const baseURL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
 
-    const [pokemonInfo, setPokemonInfo] = useState()
+    const [pokemonInfo, setPokemonInfo] = useState();
 
     useEffect (() => {
         axios.get(baseURL)
         .then((response) => 
         setCharacter(response.data.results))
-    }, [])
+    }, []);
 
     const [modalVisible, setModalVisible] = useState(false);
     const [itemSelect, setItemSelect] = useState(null);
@@ -31,17 +31,16 @@ export default function Main () {
         axios.get(infoBaseURL)
         .then((response) => 
         setPokemonInfo(response.data))
-    }
+    };
 
     function closeModal() {
         setModalVisible(false);
-    }
-
+    };
 
     return (
         <main>
             <ul className={styles.ulCharacters}>
-                {character?.map((character, index) => {
+                {pokemonFilter?.map((character, index) => {
                     return (
                         <li className={styles.li} key={index} onClick={() => {onItemClicked(character)}}>
                             <h3 className={styles.li_name}>{character?.name}</h3>
