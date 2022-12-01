@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
 import Router from 'next/router'
 import Header from '../../components/Header'
 import Main from '../../components/Main'
@@ -7,11 +7,11 @@ import header from '../../styles/Header.module.css'
 
 export default function Characters () {
 
-    const [busca, setBusca] = useState('');
+    const [busca, setBusca] = useState("");
 
     return (
         <div className={styles.containerBody}>
-            <Header busca={busca}>
+            <Header>
                 <div className={header.container}>
                     <img alt='voltar' src='../images/icon-voltar.png' className={header.iconBack} onClick={() => Router.push('../')} />                    
                     <h1 className={header.header_title}>Lista de Pokemons</h1>
@@ -24,7 +24,7 @@ export default function Characters () {
                     </div>
                 </div>
             </Header>
-            <Main />
+            <Main pokemonFilter={busca} />
         </div>
     )
 }

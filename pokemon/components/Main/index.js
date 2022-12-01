@@ -6,12 +6,18 @@ import modalStyle from '../../styles/ModalStyles.module.css'
 
 Modal.setAppElement("#__next");
 
-export default function Main ({busca}) {
+export default function Main ({ pokemonFilter }) {
 
     const [character, setCharacter] = useState();
     const baseURL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
 
     const [pokemonInfo, setPokemonInfo] = useState();
+
+    const pokemonFiltered = character?.filter((item) =>
+        item.name.toLowerCase().includes(pokemonFilter.toLowerCase())
+    );
+
+    console.log(pokemonFiltered, "filtered");
 
     useEffect (() => {
         axios.get(baseURL)
@@ -23,7 +29,7 @@ export default function Main ({busca}) {
     const [itemSelect, setItemSelect] = useState(null);
 
     const onItemClicked = (info) => {
-        const infoBaseURL = `https://pokeapi.co/api/v2/pokemon/${info?.name}`
+        const infoBaseURL = `https://pokeapi.co/api/v2/pokemon/${info?.name}`;
 
         setItemSelect(info);
         setModalVisible(true);
@@ -35,18 +41,12 @@ export default function Main ({busca}) {
 
     function closeModal() {
         setModalVisible(false);
-    };
-
-    const pokemonFilter = () => {
-        const lowerBusca = busca.toLowerCase();
-        return character.filter((pokemon) => 
-            pokemon.toLowerCase().includes(lowerBusca));
     }
 
     return (
         <main>
             <ul className={styles.ulCharacters}>
-                {pokemonFilter?.map((character, index) => {
+                {pokemonFiltered?.map((character, index) => {
                     return (
                         <li className={styles.li} key={index} onClick={() => {onItemClicked(character)}}>
                             <h3 className={styles.li_name}>{character?.name}</h3>
