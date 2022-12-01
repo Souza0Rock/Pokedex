@@ -18,26 +18,32 @@
 }
 
 .modalContent {
-    /* width: 38rem; */
+    width: 75%;
+    max-width: 680px;
+    min-height: 300px;
     max-height: 416px;
     padding: 20px;
     outline: none;
     overflow: auto;
-    display: flex;
-    justify-content: flex-end;
     border-radius: 4px;
     background: #9E8007;
 }
 
 .section {
-    display: flex;
+    /* display: flex;
+    justify-content: space-between; */
+    min-height: 260px;
 }
 
-.contentTxt {
-    width: 55%;
-    margin: 27px 0 0 -82px;
+.divHead {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+}
+
+.divBody {
+    display: flex;
+    justify-content: space-between;
 }
 
 .title {
@@ -54,10 +60,7 @@
 }
 
 .divModalImg {
-    display: flex;
-    width: 66.8%;
-    /* align-content: center;
-    justify-content: left; */
+    margin: 0 auto;
 }
 
 .modalImg {
@@ -85,14 +88,19 @@
 @media (max-width: 810px) {
     .section {
         max-width: 100%;
-        flex-direction: column-reverse;
+        display: flex;
+        flex-direction: column;
         align-items: center;
     }
 
     .modalContent {
         max-height: 95%;
         max-width: 80%;
-        justify-content: center
+        width: 370px;
+    }
+
+    .divBody {
+        flex-direction: column-reverse;
     }
 
     .nameDiv {
@@ -102,11 +110,22 @@
 
     .contentTxt {
         width: 100%;
+        padding: 0 5px;
         margin: 0;
     }
 
     .divXClose {
         order: 4;
         align-self: flex-end;
+    }
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 24px;
+    }
+    
+    .li_txt {
+        font-size: 16px;
     }
 }

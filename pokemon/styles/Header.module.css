@@ -12,6 +12,7 @@
 
 .header_title {
     color: #F9C903;
+    text-align: center;
 }
 
 .formRequest {
@@ -20,9 +21,9 @@
     text-align: center;
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 1651px) {
     .header {
-        padding: 0 15%;
+        padding: 0 5.6%;
     }
 
     .iconBack {
@@ -44,11 +45,13 @@
     }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1651px) {
     .header {
-        padding: 0 5.6%;
+        padding: 0 10.5%;
     }
-    
+}
+
+@media (max-width: 1650px) {
     .formsContainer {
         height: 30px;
     }
@@ -81,7 +84,7 @@
 
     .formsContainer {
         height: 45px;
-        width: 50%;
+        width: 80%;
     }
 
     .formRequest {

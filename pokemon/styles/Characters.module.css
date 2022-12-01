@@ -32,7 +32,7 @@
     color: #F9C903;
 }
 
-@media (min-width: 1441px) {
+@media (max-width: 1650px) {
     .ulCharacters {
         padding: 10px 8% 30px;
     }
