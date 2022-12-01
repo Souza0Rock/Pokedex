@@ -1,12 +1,12 @@
 import axios from "axios";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import styles from '../../styles/Characters.module.css'
 import modalStyle from '../../styles/ModalStyles.module.css'
 
 Modal.setAppElement("#__next");
 
-export default function Main ({pokemonFilter}) {
+export default function Main ({busca}) {
 
     const [character, setCharacter] = useState();
     const baseURL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
@@ -36,6 +36,12 @@ export default function Main ({pokemonFilter}) {
     function closeModal() {
         setModalVisible(false);
     };
+
+    const pokemonFilter = () => {
+        const lowerBusca = busca.toLowerCase();
+        return character.filter((pokemon) => 
+            pokemon.toLowerCase().includes(lowerBusca));
+    }
 
     return (
         <main>

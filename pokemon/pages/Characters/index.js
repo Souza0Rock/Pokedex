@@ -8,18 +8,10 @@ import header from '../../styles/Header.module.css'
 export default function Characters () {
 
     const [busca, setBusca] = useState('');
-    const [character, setCharacter] = useState();
-
-    const pokemonFilter = useMemo (() => {
-        const lowerBusca = busca.toLowerCase();
-        return character.filter((pokemon) => 
-            pokemon
-            .toLowerCase().includes(lowerBusca));
-    }, [busca])
 
     return (
         <div className={styles.containerBody}>
-            <Header>
+            <Header busca={busca}>
                 <div className={header.container}>
                     <img alt='voltar' src='../images/icon-voltar.png' className={header.iconBack} onClick={() => Router.push('../')} />                    
                     <h1 className={header.header_title}>Lista de Pokemons</h1>
@@ -32,7 +24,7 @@ export default function Characters () {
                     </div>
                 </div>
             </Header>
-            <Main pokemonFilter={pokemonFilter} />
+            <Main />
         </div>
     )
 }
