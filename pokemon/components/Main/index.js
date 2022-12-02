@@ -67,7 +67,7 @@ export default function Main ({ pokemonFilter }) {
                         </div>
                         <div className={modalStyle.divBody}>
                             <div className={modalStyle.contentTxt}>
-                                <ul>                    
+                                <ul className={modalStyle.ulTxt}>                    
                                     <li className={modalStyle.li_info}>
                                         <p className={modalStyle.li_txt}>hp = {pokemonInfo && pokemonInfo?.stats[0]?.base_stat}</p>
                                     </li>

@@ -1,8 +1,9 @@
 .container {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
     background-color: #000;
     background-image: url('../public/images/cabeca_pok.jpg');
     background-repeat: no-repeat;
@@ -11,8 +12,12 @@
     background-size: cover;
 }
 
+.imgLogo {
+    display: none;
+}
+
 .formsContainer {
-    margin-right: 18%;
+    margin-left: 18%;
 }
 
 .formRequest, .button {
@@ -34,14 +39,23 @@
 
 @media (max-width: 1440px) {
     .container {
-        background-image: url('../public/images/pokemon-bg.png');
-        background-position-x: 46%;
-        background-position-y: 15%;
-        background-size: 60%;
+        background-image: none;
+        justify-content: space-evenly;
+    }
+
+    .divImgLogo {
+        display: flex;
         justify-content: center;
+    }
+
+    .imgLogo {
+        width: 60%;
+        /* margin: 5% 18% 0; */
+        display: initial;
     }
     
     .formsContainer {
-        margin: 0;
+        margin: 0 0 15rem;
+        align-self: center;
     }
 }
