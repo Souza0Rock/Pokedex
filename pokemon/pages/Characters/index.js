@@ -7,6 +7,10 @@ import header from '../../styles/Header.module.css'
 
 export default function Characters () {
 
+    if (typeof window !== 'undefined') {
+        document.title= 'Pokemon List' 
+    }
+
     const [busca, setBusca] = useState("");
 
     return (

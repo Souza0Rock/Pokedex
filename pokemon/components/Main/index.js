@@ -11,10 +11,8 @@ export default function Main ({ pokemonFilter }) {
     const [character, setCharacter] = useState();
     const baseURL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
 
-    const [pokemonInfo, setPokemonInfo] = useState();
-
     const pokemonFiltered = character?.filter((item) =>
-        item.name.toLowerCase().includes(pokemonFilter.toLowerCase())
+    item?.name?.toLowerCase().includes(pokemonFilter.toLowerCase())
     );
 
     useEffect (() => {
@@ -37,6 +35,16 @@ export default function Main ({ pokemonFilter }) {
         setPokemonInfo(response.data))
     };
 
+    const [pokemonInfo, setPokemonInfo] = useState();
+
+    const teste = (info) => {
+        const infoBaseURL = `https://pokeapi.co/api/v2/pokemon/${info?.name}`;
+
+        axios.get(infoBaseURL)
+        .then((response) => 
+        setPokemonInfo(response.data))
+    };
+
     function closeModal() {
         setModalVisible(false);
     }
@@ -46,8 +54,9 @@ export default function Main ({ pokemonFilter }) {
             <ul className={styles.ulCharacters}>
                 {pokemonFiltered?.map((character, index) => {
                     return (
-                        <li className={styles.li} key={index} onClick={() => {onItemClicked(character)}}>
+                        <li className={styles.li} key={index} id={character?.url} onClick={() => {onItemClicked(character)}}>
                             <h3 className={styles.li_name}>{character?.name}</h3>
+                            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`} alt={character?.name} className={styles.imgCard} />
                         </li>
                     );
                 })}

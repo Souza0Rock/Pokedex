@@ -12,7 +12,7 @@
 }
 
 .li {
-    min-width: 11%;
+    width: 11%;
     padding: 15px 10px;
     border: 2px solid #8b7109;
     border-radius: 3px;
@@ -20,16 +20,21 @@
 }
 
 .li:hover {
-    box-shadow: 0px 10px 27px -9px #f2f5f7, 
+    box-shadow: 0px 10px 27px -9px #fff, 
     0px -10px 27px -2px #a31925;
     transition: 0.3s;
 }
 
 .li_name {
+    margin-bottom: 2rem;
     text-transform: capitalize;
     text-align: center;
     letter-spacing: 2px;
     color: #F9C903;
+}
+
+.imgCard {
+    width: 100%;
 }
 
 @media (max-width: 1650px) {
