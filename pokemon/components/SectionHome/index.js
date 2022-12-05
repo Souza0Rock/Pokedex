@@ -38,9 +38,9 @@ export default function SectionHome() {
                 <div className={styles.divImgLogo}>
                     <img src='../images/pokemon-bg.png' className={styles.imgLogo} />
                 </div>
-                <div className={styles.formsContainer} >
-                    <div>
-                        <input 
+                <div className={styles.teste} >
+                    <div className={styles.formsContainer}>
+                        <input
                             type={"text"} 
                             placeholder={"Encontre seu pokemon!"} 
                             className={styles.formRequest} 

@@ -17,7 +17,7 @@ export default function Characters () {
                     <h1 className={header.header_title}>Lista de Pokemons</h1>
                     <div className={header.formsContainer}>
                         <input type={"text"} 
-                        placeholder={"Encontre seu pokemon"} 
+                        placeholder={"Encontre seu pokemon!"}
                         value={busca}
                         onChange={(ev) => setBusca(ev.target.value)}
                         className={header.formRequest} />
