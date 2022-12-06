@@ -11,6 +11,7 @@
 }
 
 .header_title {
+    margin-left: 9%;
     color: #F9C903;
     text-align: center;
 }
@@ -32,6 +33,7 @@
 
     .header_title {
         font-size: 50px;
+        margin-left: 14%;
     }
 
     .formsContainer {
@@ -79,6 +81,7 @@
     }
 
     .header_title {
+        margin: 0;
         padding-top: 5%;
     }
 
@@ -89,11 +92,6 @@
 
     .formRequest {
         width: 100%;
-    }
-}
-
-@media (max-width: 460px) {
-    .formRequest {
-        font-size: 9px;
+        font-size: 15px;
     }
 }

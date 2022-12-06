@@ -37,14 +37,6 @@ export default function Main ({ pokemonFilter }) {
 
     const [pokemonInfo, setPokemonInfo] = useState();
 
-    const teste = (info) => {
-        const infoBaseURL = `https://pokeapi.co/api/v2/pokemon/${info?.name}`;
-
-        axios.get(infoBaseURL)
-        .then((response) => 
-        setPokemonInfo(response.data))
-    };
-
     function closeModal() {
         setModalVisible(false);
     }
@@ -53,10 +45,12 @@ export default function Main ({ pokemonFilter }) {
         <main>
             <ul className={styles.ulCharacters}>
                 {pokemonFiltered?.map((character, index) => {
+                    const splitUrl = character.url.split('pokemon/')[1]
+                    const splitNumber = splitUrl.split('/')[0]
                     return (
                         <li className={styles.li} key={index} id={character?.url} onClick={() => {onItemClicked(character)}}>
                             <h3 className={styles.li_name}>{character?.name}</h3>
-                            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`} alt={character?.name} className={styles.imgCard} />
+                            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${splitNumber}.png`} alt={character?.name} className={styles.imgCard} />
                         </li>
                     );
                 })}

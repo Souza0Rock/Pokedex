@@ -1,0 +1,25 @@
+.btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    align-self: baseline;
+    border-radius: 50%;
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgb(23, 23, 23);
+    cursor: pointer;
+}
+
+.arrow {
+    border: solid #A6955A;
+    border-width: 0 7px 7px 0;
+    padding: 5px;
+    display: inline-block;
+    transform: rotate(-225deg);
+}
+
+@media (min-width: 811px) {
+    .btn {
+        display: none;
+    }
+}
