@@ -4,5 +4,6 @@
     "compounds": []
   },
   "workbench.settings.useSplitJSON": true,
-  "json.format.enable": false
+  "json.format.enable": false,
+  "git.ignoreLimitWarning": true
 }

@@ -20,6 +20,7 @@ export default function SectionHome() {
     const pokemoLendas = () => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
         .then((response) => {
+
         setResposta(response.data);
         setOpenModal(true);
         })
@@ -45,7 +46,7 @@ export default function SectionHome() {
                             placeholder={"Encontre seu pokemon!"} 
                             className={styles.formRequest} 
                             onChange={(e) => 
-                                setPokemon(e.target.value)
+                                setPokemon(e.target.value.toLowerCase(pokemon))
                             } 
                         />
                         <button type='submit' className={styles.formRequest} 
